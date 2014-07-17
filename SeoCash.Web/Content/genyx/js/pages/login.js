@@ -36,40 +36,77 @@
     //------------- Validation -------------//
     $("#login-form").validate({
         rules: {
-            Login: {
+            email: {
                 required: true,
                 email: true
             },
-            Password: {
+            password: {
                 required: true,
                 minlength: 6
             }
         },
         messages: {
-            Login: {
+            email: {
                 required: "Введите ваш Email",
                 email: "Введите правильный Email"
             },
-            Password: {
+            password: {
                 required: "Введите ваш пароль",
                 minlength: "Минимальная длина пароля - 6 символов"
             }
-        }/*,
-		submitHandler: function(form){
-	        var btn = $('#loginBtn');
-	        btn.removeClass('btn-primary');
-	        btn.addClass('btn-danger');
-	        btn.text('Checking ...');
-	        btn.attr('disabled', 'disabled');
-	        setTimeout(function() {
-	        	btn.removeClass('btn-danger');
-	        	btn.addClass('btn-success');
-	        	btn.text('User find ...');
-	        }, 1500);
-	        setTimeout(function () {
-	        	form.submit();
-	        }, 2000);
-		}*/
+        }
+    });
+
+    //------------- Validation -------------//
+    $("#reg-form").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+                remote: "/cabinet/account/check"
+            },
+            password: {
+                required: true,
+                minlength: 6
+            },
+            password1: {
+                required: true,
+                equalTo: "#rpassword-field",
+                minlength: 6
+            }
+        },
+        messages: {
+            email: {
+                required: "Введите ваш Email",
+                email: "Введите правильный Email"
+            },
+            password: {
+                required: "Введите ваш пароль",
+                minlength: "Минимальная длина пароля - 6 символов",
+                equalTo: "Введите тоже самое значение снова"
+            },
+            password1: {
+                required: "Введите ваш пароль",
+                minlength: "Минимальная длина пароля - 6 символов",
+                equalTo: "Введите тоже самое значение снова"
+            }
+        }
+    });
+    //------------- Validation -------------//
+    $("#forgot-form").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+                remote: "/cabinet/account/check2"
+            }
+        },
+        messages: {
+            email: {
+                required: "Введите ваш Email",
+                email: "Введите правильный Email"
+            }
+        }
     });
 
 });

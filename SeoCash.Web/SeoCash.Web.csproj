@@ -122,6 +122,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Cabinet\CabinetAreaRegistration.cs" />
+    <Compile Include="Areas\Cabinet\Controllers\AccountController.cs" />
     <Compile Include="Classes\DAL\SeoCash.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1113,6 +1115,8 @@
     <Content Include="Content\genyx\typo.html" />
     <Content Include="Content\genyx\ui-elements.html" />
     <Content Include="Content\genyx\widgets.html" />
+    <Content Include="Content\images\logo-small.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1125,6 +1129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Cabinet\Models\" />
+    <Folder Include="Areas\Cabinet\Views\Shared\" />
     <Folder Include="Content\genyx\files\.quarantine\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -1197,6 +1203,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Cabinet\Views\Web.config" />
+    <Content Include="Areas\Cabinet\Views\Account\Login.cshtml" />
     <None Include="Classes\DAL\SeoCash.dbml.layout">
       <DependentUpon>SeoCash.dbml</DependentUpon>
     </None>
